@@ -22,6 +22,19 @@
                 <router-link to="/">Beranda</router-link> |
                 <router-link to="/artikel">Kelola Artikel</router-link>
                 <router-link to="/about">About</router-link>
+                <router-link
+                    v-if="!isLoggedIn"
+                    to="/login"
+                >
+                    Login
+                </router-link>
+                <a
+                    v-else
+                    href="#"
+                    @click.prevent="logout"
+                >
+                    Logout
+                </a>
             </nav>
         </header>
 
@@ -34,6 +47,7 @@
     <script src="assets/js/components/Home.js"></script>
     <script src="assets/js/components/Artikel.js"></script>
     <script src="assets/js/components/About.js"></script>
+    <script src="assets/js/components/Login.js"></script>
     <script src="assets/js/app.js"></script>
 
 </body>
